@@ -1,0 +1,23 @@
+version: '3'
+services:
+  node-build:
+    container_name: node_common_build
+    #指定构建的Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
+      #工作目录空间
+    working_dir: /app
+    volumes:
+      #将npm目录映射出来，公共
+      - /home/liangyu/my_node/comment_npm_lib/:/usr/local/lib
+      #jenkins执行的时候，   ./是项目的路径
+      - ./:/app
+      #这里啊琛哥确认编译之后的文件目录
+    command: npm install && npm run build
+    #设置环境变量
+    networks:
+      - node_build
+networks:
+  node_build:
+    driver: bridge
