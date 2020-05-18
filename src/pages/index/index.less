@@ -1,0 +1,140 @@
+:global {
+  .loading {
+    padding-right: 123px;
+    // width: ;
+    &-load {
+      width: 70%;
+    }
+  }
+  .index {
+    padding-right: 123px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // width: ;
+    &-input {
+      position: relative;
+      align-items: flex-end;
+      width: 498px;
+      height: 208px;
+      // background: url('../../assets/img/input.png') no-repeat ;
+      background-size: 100% 100%;
+      &-content {
+        width: 100%;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0) !important;
+        .am-input-control {
+          height: 117px;
+          input {
+            height: 100%;
+            padding: 0 !important;
+            text-align: center;
+          }
+        }
+        
+      }
+    }
+    &-submit {
+      width: 345px;
+    }
+  }
+  .welcome {
+    background-color: #fff9db;
+    position: relative;
+    &-gift {
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      width: 63px;
+      height: 141px;
+      z-index: 999;
+      // background: url('../../assets/img/box.png') no-repeat;
+      background-size: contain;
+    }
+
+    &-container {
+      height: 100%;
+      &-left {
+        position: relative;
+        box-sizing: border-box;
+        padding: 0 20px;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        & > img {
+          margin-top: -120px;
+          width: 100%;
+        }
+        &-begin {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          width: 100%;
+          height: 229px;
+          &-scrollball {
+            position: relative;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 0 25px;
+            width: 63%;
+            & > img {
+              width: 100%;
+              :local {
+                animation: fade 1s linear infinite alternate;
+              }
+            }
+          }
+        }
+      }
+      &-right {
+        box-sizing: border-box;
+        width: 300px;
+        height: 100%;
+        &-wrapper {
+          box-sizing: border-box;
+          padding-top: 100px;
+          height: 100%;
+          &-content {
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            padding: 46px 46px 0 46px;
+            height: 100vh;
+            overflow: hidden;
+            // background: url('../../assets/img/wel-scroll-bg.png') no-repeat;
+            background-size: 100% 100%;
+            z-index: 99;
+            
+            flex-direction: column;
+            & > img {
+              position: relative;
+              width: 218px;
+              :local {
+                animation: scroll 20s linear infinite normal;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    
+  }
+  @keyframes scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, -653px, 0);
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
