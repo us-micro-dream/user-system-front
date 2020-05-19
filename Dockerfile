@@ -1,9 +1,16 @@
-FROM node:14.2.0-alpine3.10
+FROM node:14.2.0-stretch
 
-#切换npm源
-# RUN npm config set registry https://registry.npm.taobao.org
 
-COPY ./ /app
+#国内源
+RUN npm i tyarn -g
+
+RUN tyarn -v
+
+#安装umi
+RUN tyarn global add umi
+RUN umi -v
 
 WORKDIR /app
+
+COPY ./ /app
 
