@@ -13,7 +13,7 @@ services:
       - /home/liangyu/laughing_zhu_node/node_modules:/app/node_modules
       #jenkins执行的时候，   ./是项目的路径
       - ./:/app
-      - /home/liangyu/laughing_zhu_node/project/user-system-fornt:/app/dist
+      - /home/liangyu/laughing_zhu_node/project/user_system_fornt:/app/dist
       #这里啊琛哥确认编译之后的文件目录
     command: npm i
     #设置环境变量
