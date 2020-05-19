@@ -15,7 +15,7 @@ services:
       - ./:/app
       - /home/liangyu/laughing_zhu_node/project/user-system-fornt:/app/dist
       #这里啊琛哥确认编译之后的文件目录
-    command: yarn
+    command: npm i
     #设置环境变量
     networks:
       - node_build
